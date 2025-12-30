@@ -1,7 +1,7 @@
 ![Project Ouroboros](docs/ouroboros.jpg)
 
 **Cosmological History Selection by Local Agency**
-*Principal Investigator: A. Hewitt | The Ante Institute*
+*Principal Investigator: A. Hewitt | antÉ Institute*
 
 ## Overview
 This repository contains the computational pipeline for **Phase II** of the Universal Ledger investigation. It implements a rigor-first approach to testing the **Biological Selection Hypothesis**—the proposal that the "Axis of Evil" (CMB Quadrupole/Octupole alignment) and other cosmological anomalies are not measurement errors, but selection artifacts soft-locked to the observer's local frame (The Solar System).
@@ -32,12 +32,12 @@ ouroboros/
 │       │   ├── math.py     # Spherical geometry helpers
 │       │   └── stats.py    # Statistical functions (P(n), significance)
 │       ├── engines/        # The three core investigation tracks
-│       │   ├── parity.py   # Plan A: Point-Parity logic [cite: 20]
-│       │   ├── geo.py      # Plan B: Geodesic distance calculators [cite: 26]
-│       │   └── quasar.py   # Plan C: Vector alignment logic [cite: 35]
+│       │   ├── parity.py   # Plan A: Point-Parity logic
+│       │   ├── geo.py      # Plan B: Geodesic distance calculators
+│       │   └── quasar.py   # Plan C: Vector alignment logic
 │       └── validation/     # The Null-Test Filter
-│           ├── nulling.py  # Monte Carlo generators (rotations) [cite: 15]
-│           └── shuffling.py# Catalog shuffling logic [cite: 16]
+│           ├── nulling.py  # Monte Carlo generators (rotations)
+│           └── shuffling.py# Catalog shuffling logic
 │
 ├── scripts/                # Executable CLI scripts to run full pipelines
 │   ├── run_parity_pipeline.py
