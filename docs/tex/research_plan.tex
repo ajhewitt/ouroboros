@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\title{\textbf{Project Ouroboros: Cosmological History Selection by Local Agency}\\
+\large Phase II Research Protocol \& Auditing Pipeline}
+\author{Principal Investigator: A. Hewitt \\ Computational Lead: Gemini (Model 1.5)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase I of the ``Universal Ledger'' investigation successfully developed a rigorous null-test pipeline, ruling out overt instrument-coupling artifacts ($>10\sigma$) in Planck and COSMOS2020 data as manifestations of Zodiacal light and window-function aliasing. Phase II pivots to the \textbf{Biological Selection Hypothesis}. We propose that the ``Axis of Evil'' (CMB Quadrupole/Octupole alignment) is not a measurement error, but a \emph{Selection Artifact}. We posit that the emergence of local biological agency requires specific initial conditions, effectively ``selecting'' a cosmological history from the quantum superposition at the Surface of Last Scattering ($z \sim 1100$) that is geometrically compatible with the local Solar System frame. This protocol outlines the methodology to search for subtle ($3\sigma$--$4\sigma$) signatures of this retro-causal selection in Parity Asymmetry, the Cold Spot, and High-Z Quasars.
+\end{abstract}
+
+\section{Theoretical Framework: The Agency Selector}
+Standard $\Lambda$CDM assumes an objective past independent of the observer. The \textbf{Parochial by Construction (PbC)} framework argues that the ``Past'' is a reconstructed probability distribution. 
+\begin{itemize}
+    \item \textbf{The Hypothesis:} The specific micro-state of the CMB ($z=1100$) is constrained by the existence of the observer's macro-state (Earth/Solar System) at $z=0$.
+    \item \textbf{The Mechanism:} A ``Soft-Lock'' where the observer's reference frame (Ecliptic/Solar Angular Momentum) imprints a preferred axis onto the primordial perturbations.
+    \item \textbf{The Signature:} Structural alignments in the CMB and high-$z$ matter distribution that cannot be explained by kinematics (dipole) or local foregrounds (Zodiacal dust).
+\end{itemize}
+
+\section{Methodology: The Null-Test Engine}
+All investigations in Phase II must pass the three-stage forensic filter developed in Phase I to avoid false positives.
+
+\begin{enumerate}
+    \item \textbf{Kinematic Isolation:} Explicit removal of the Monopole ($l=0$) and Dipole ($l=1$) modes. We search only for structural coupling ($l \ge 2$).
+    \item \textbf{Foreground Veto:} Parallel auditing of Raw maps (143/217 GHz) vs. Component-Separated maps (SMICA/SEVEM). A signal must persist in SMICA to be considered cosmological.
+    \item \textbf{Geometric Nulling:} Significance is determined via Monte Carlo simulations ($N \ge 100$) involving:
+    \begin{itemize}
+        \item \emph{Spatial Rotations:} Rotating the sky relative to the Solar System frame.
+        \item \emph{Shuffled Controls:} Randomizing catalogs while preserving mask density (for Large Scale Structure).
+    \end{itemize}
+\end{enumerate}
+
+\section{Investigation Plan A: The Parity Mirror}
+\textit{Testing the alignment of Cosmic Parity Violation with Solar Helicity.}
+
+\subsection{Rationale}
+The CMB displays an anomalous parity asymmetry (odd-parity modes slightly overpower even-parity modes). If the Solar System's formation selected this history, the axis of maximum asymmetry should align with the \textbf{Solar Angular Momentum Vector} (the Sun's spin axis), rather than the Ecliptic plane.
+
+\subsection{Execution Strategy}
+\begin{enumerate}
+    \item \textbf{Data:} Planck NPIPE and SMICA maps.
+    \item \textbf{Metric:} Calculate the Point-Parity statistic $P(n)$ for multipoles $l=2$ to $l=100$.
+    \item \textbf{Directional Scan:} Compute $P(n)$ along 3,072 directions (HEALPix grid).
+    \item \textbf{Test:} Does the dipole of the Parity Asymmetry point to the Solar North Pole ($\text{RA} \approx 286^\circ, \text{Dec} \approx 64^\circ$)?
+    \item \textbf{Validation:} Must survive Monte Carlo rotation of the map relative to the Solar axis.
+\end{enumerate}
+
+\section{Investigation Plan B: The Cold Spot Shadow}
+\textit{Testing the geometric nodal placement of the Eridanus Supervoid.}
+
+\subsection{Rationale}
+The ``Cold Spot'' is a non-Gaussian anomaly ($4\sigma$) inconsistent with standard inflation. In the PbC context, this may represent a ``probabilistic void''---a region of phase space emptied to maximize the probability of the local observer's existence.
+
+\subsection{Execution Strategy}
+\begin{enumerate}
+    \item \textbf{Data:} SMICA temperature map (strictly masked).
+    \item \textbf{Geometric Audit:} Calculate the coordinates of the Cold Spot center.
+    \item \textbf{Nodal Check:} Determine the distance of the Cold Spot from:
+    \begin{itemize}
+        \item The Ecliptic Poles.
+        \item The intersection of the Galactic and Ecliptic planes (the Equinox nodes).
+    \end{itemize}
+    \item \textbf{Hypothesis:} If the Cold Spot is a selection artifact, it should lie at a harmonic node (e.g., $90^\circ$ or $45^\circ$) relative to the Solar geometry.
+\end{enumerate}
+
+\section{Investigation Plan C: High-Z Quasar Soft-Lock}
+\textit{Searching for the fading tail of selection in the First Light era.}
+
+\subsection{Rationale}
+Phase I showed galaxies at $z \sim 4$ are decohered. However, Quasars ($z > 6$) represent the era of Reionization, closer to the temporal boundary of the selection mechanism. They may exhibit a ``Soft-Lock'' alignment with the CMB Quadrupole.
+
+\subsection{Execution Strategy}
+\begin{enumerate}
+    \item \textbf{Data:} SDSS-IV / eBOSS / DESI High-Redshift Quasar catalogs ($z > 2.5$).
+    \item \textbf{Vector Alignment:} Instead of scalar density (which failed in P6), measure the \textbf{Polarization Vectors} (if available) or the \textbf{Separation Vectors} of quasar pairs.
+    \item \textbf{Correlation:} Correlate the quasar distribution vectors with the axis of the CMB Quadrupole ($l=2$).
+    \item \textbf{Artifact Removal:} Apply the ``Shuffled Randoms'' protocol from Phase I to strictly rule out window-function aliasing (the ``W'' shape artifact).
+\end{enumerate}
+
+\section{Summary of Deliverables}
+\begin{itemize}
+    \item \textbf{Codebase:} Python scripts utilizing \texttt{healpy}, \texttt{astropy}, and \texttt{scipy.stats}.
+    \item \textbf{Success Criteria:} A signal detection of $>3.5\sigma$ that survives SMICA cleaning and Monte Carlo geometric nulling.
+\end{itemize}
+
+\end{document}
