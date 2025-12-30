@@ -94,6 +94,7 @@ To reproduce the final "Incoherence" result:
 # 1. Download Planck SMICA map to data/raw/planck/smica.fits
 # 2. Run the separation forensics script
 python scripts/run_separation_forensics.py
+```
 
 ---
 
