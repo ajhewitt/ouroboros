@@ -1,0 +1,81 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{booktabs}
+
+% Page Layout
+\geometry{margin=1in}
+
+% Title Metadata
+\title{\textbf{Project Ouroboros: Cosmological History Selection by Local Agency}}
+\author{Alastair J. Hewitt \\ \small antÉ Institute}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present the final results of the ``Universal Ledger'' investigation, searching for retro-causal signatures of local agency in the Cosmic Microwave Background (CMB) and Large Scale Structure. Utilizing a rigorous Null-Test Engine ($N \ge 1000$), we audited the ``Soft-Lock'' hypothesis across Geometric, Kinematic, and Thermodynamic domains. We report a consistent Null Result ($p > 0.05$) for all Solar-aligned vectors. Furthermore, we investigated the ``Axis of Evil'' (the anomalous alignment of $l=2$ and $l=3$ modes). While no solar correlation was found ($p=0.459$), a null-test of the intrinsic alignment revealed that 60.0\% of random, masked universes exhibit a tighter alignment than the real sky. We conclude that the Axis of Evil is a geometric artifact of the Galactic Mask and that the observable universe is statistically independent of the local observer's reference frame.
+\end{abstract}
+
+\section{Introduction}
+The ``Axis of Evil'' and other CMB anomalies challenge the Copernican Principle. The \textbf{Parochial by Construction (PbC)} framework posits that these are selection artifacts required for the emergence of the local observer. This paper details the computational audit of this hypothesis using the \texttt{ouroboros} pipeline.
+
+\section{Methodology}
+To rule out window-function aliasing, we implemented a blind-analysis protocol:
+\begin{enumerate}
+    \item \textbf{Kinematic Isolation:} Removal of Dipole ($l=1$) and Monopole terms.
+    \item \textbf{Geometric Nulling:} Significance defined by the fraction of Solar-frame rotations ($N=1000$) exhibiting stronger alignment than the data.
+    \item \textbf{Tomographic Slicing:} Differential auditing of signal stability across multipole bins ($l=2-100$).
+    \item \textbf{Harmonic Decomposition:} Principal Axis analysis of $l=2$ (Quadrupole) and $l=3$ (Octopole) modes via eigenvalue decomposition.
+\end{enumerate}
+
+\section{Results}
+
+\subsection{Phase II: Geometric \& Spatial Audits}
+We tested the alignment of Parity Asymmetry and the Eridanus Supervoid (Cold Spot) against the Solar Spin and Ecliptic geometry.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llcc}
+        \toprule
+        \textbf{Investigation} & \textbf{Target Vector} & \textbf{P-Value} & \textbf{Result} \\
+        \midrule
+        Parity Mirror & Solar Spin Axis & 0.890 & Null \\
+        Parity Mirror & Ecliptic Pole & 0.870 & Null \\
+        Cold Spot & Ecliptic Nodes & 0.614 & Null \\
+        Cold Spot & Solar Spin Axis & 0.612 & Null \\
+        \bottomrule
+    \end{tabular}
+    \caption{Null-test results for Geometric Alignment ($N=1000$).}
+\end{table}
+
+\subsection{Phase III: Kinematic Tomography}
+In Phase II, a weak aggregate alignment ($p=0.11$) was observed between Parity Asymmetry and the CMB Dipole. Phase III decomposed this signal into three multipole bins, revealing a ``Drifting Angle'' phenomenon (swinging from $158^\circ$ to $59^\circ$) that confirms the lack of a stable physical axis.
+
+\subsection{Phase IV: The Axis of Evil}
+We audited the anomalous $9.03^\circ$ alignment between the CMB Quadrupole and Octopole planes.
+\begin{enumerate}
+    \item \textbf{Solar Alignment:} The Octopole axis is separated from the Ecliptic Pole by $13.9^\circ$. A null test ($N=1000$) yielded $p=0.459$, indicating this is consistent with random chance on a masked sky.
+    \item \textbf{Intrinsic Validity:} We tested whether the internal alignment of $l=2$ and $l=3$ is anomalous. In 2,000 simulations of random isotropic universes subjected to the standard Galactic Mask, 1,200 (60.0\%) exhibited an alignment tighter than $9.03^\circ$.
+\end{enumerate}
+
+\subsection{Investigation C: High-Z Quasar Soft-Lock}
+We analyzed the separation vectors of high-redshift ($z > 2.5$) quasars using the DESI Data Release 1 ``Main Dark'' catalog ($N=3000$ pairs). The alignment with the Solar Angular Momentum vector yielded a p-value of \textbf{0.221}, confirming that the reionization era structure is independent of the Solar Frame.
+
+\section{Discussion}
+The ``Soft-Lock'' hypothesis predicted that the Universe's history is selected to be compatible with the local observer's state. Our analysis rigorously tested this against Orientation, Location, Motion, and Entropy.
+
+In all cases, the data is consistent with the Null Hypothesis. Furthermore, our analysis of the ``Axis of Evil'' demonstrates that the anomaly is likely a geometric artifact induced by the Galactic Mask, which forces low-multipole modes to align with the available sky area (the poles).
+
+\section{Conclusion}
+Project Ouroboros has established a rigorous falsification of the Geometric and Kinematic Selection hypotheses. The local Solar System possesses no privileged status in the statistical realization of the primordial universe. Future work should focus on information-theoretic constraints rather than classical geometric alignments.
+
+\bibliographystyle{plain}
+\end{document}

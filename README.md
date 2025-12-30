@@ -1,103 +1,101 @@
 ![Project Ouroboros](docs/ouroboros.jpg)
 
-**Cosmological History Selection by Local Agency**
-*Principal Investigator: A. Hewitt | antÉ Institute*
+**Principal Investigator:** A. Hewitt  
+**Status:** COMPLETE (Hypothesis Falsified)  
+**Date:** December 30th, 2025
 
-## Overview
-This repository contains the computational pipeline for **Phase II** of the Universal Ledger investigation. It implements a rigor-first approach to testing the **Biological Selection Hypothesis**—the proposal that the "Axis of Evil" (CMB Quadrupole/Octupole alignment) and other cosmological anomalies are not measurement errors, but selection artifacts soft-locked to the observer's local frame (The Solar System).
+## 1. Project Overview
 
-## Repo Layout
+Project Ouroboros was a computational investigation into the **Parochial by Construction (PbC)** hypothesis. This framework posited that the apparent "fine-tuning" of the Universe's history might be a retro-causal artifact selected to be compatible with the local observer's reference frame (the Solar System).
 
-```text
-ouroboros/
-├── data/                   # IGNORED by git (local storage for FITS/catalogs)
-│   ├── raw/                # Planck NPIPE, SMICA maps, SDSS catalogs
-│   └── processed/          # Intermediate outputs (cached masks, filtered tables)
-│
-├── docs/                   # PDF documentation
-│   └── tex/                # LaTeX documentation
-│       └── research_plan.tex # The "Project Ouroboros: Phase II" manuscript
-│
-├── notebooks/              # Jupyter notebooks for exploratory analysis & visualization
-│   ├── 01_parity_scan.ipynb
-│   ├── 02_cold_spot_geo.ipynb
-│   └── 03_quasar_corr.ipynb
-│
-├── src/                    # Source code package
-│   └── ouroboros/
-│       ├── __init__.py
-│       ├── config.py       # Hardcoded constants (Solar Poles, coordinate frames)
-│       ├── ingestion.py    # Map loading (healpy) and catalog parsing (astropy)
-│       ├── tools/          # Shared mathematical utilities
-│       │   ├── math.py     # Spherical geometry helpers
-│       │   └── stats.py    # Statistical functions (P(n), significance)
-│       ├── engines/        # The three core investigation tracks
-│       │   ├── parity.py   # Plan A: Point-Parity logic
-│       │   ├── geo.py      # Plan B: Geodesic distance calculators
-│       │   └── quasar.py   # Plan C: Vector alignment logic
-│       └── validation/     # The Null-Test Filter
-│           ├── nulling.py  # Monte Carlo generators (rotations)
-│           └── shuffling.py# Catalog shuffling logic
-│
-├── scripts/                # Executable CLI scripts to run full pipelines
-│   ├── run_parity_pipeline.py
-│   └── run_null_tests.py
-│
-├── tests/                  # Unit tests (pytest)
-│   ├── test_geometry.py
-│   └── test_ingestion.py
-│
-├── .gitignore              # Standard Python + Data exclusions
-├── pyproject.toml          # Dependency management & build config
-└── README.md               # Documentation & Manifest
+The pipeline performed a rigorous **Null-Test Audit (N >= 1000)** across three cosmological epochs:
+1.  **The CMB (Phase I-IV):** Testing geometric alignments of temperature anomalies.
+2.  **The Dark Ages:** Testing kinematic coupling of the Dipole.
+3.  **The Reionization Era:** Testing structural alignment of High-Z Quasars.
+
+## 2. Final Results
+The investigation systematically ruled out the hypothesis across all domains.
+
+| Investigation | Target Vector | P-Value | Conclusion |
+| :--- | :--- | :--- | :--- |
+| **A. Parity Mirror** | Solar Spin Axis | **0.890** | **Null** (Counter-Aligned) |
+| **B. Cold Spot** | Ecliptic Nodes | **0.614** | **Null** (Random Placement) |
+| **C. Quasar Structure** | Solar Spin Axis | **0.221** | **Null** (Random Orientation) |
+| **D. Ecliptic Shielding**| Variance | **0.747** | **Null** (Signal vanished after Galactic Cut) |
+
+### The "Axis of Evil" Finding (Phase IV)
+We investigated the anomalous alignment between the CMB Quadrupole (l=2) and Octopole (l=3), which are observed to be parallel within ~9 degrees.
+* **Solar Alignment:** We found no statistically significant link between this axis and the Solar System (p=0.459).
+* **Intrinsic Validity:** A null test (N=2000) revealed that **60.0%** of random universes produce an alignment tighter than 9 degrees when subjected to a standard Galactic Mask.
+* **Verdict:** The "Axis of Evil" is confirmed to be a **geometric artifact** of the mask, not a cosmological structure.
+
+---
+
+## 3. Repository Structure
+
+### `/scripts` (Execution Entry Points)
+These scripts run specific scientific audits.
+
+#### **Phase I: Initial Ledger Audit**
+
+#### **Phase II: Geometric Audits**
+* `run_parity_pipeline.py`: Calculates Point-Parity Asymmetry and checks alignment with Solar Spin/Orbit.
+* `run_geo_pipeline.py`: Checks if the Eridanus Supervoid (Cold Spot) is geometrically locked to Ecliptic Nodes.
+* `run_quasar_pipeline.py`: (Plan C) Analyzes separation vectors of High-Z Quasars (z > 2.5) relative to Solar Angular Momentum.
+
+#### **Phase III: Kinematic Audits**
+* `run_phase3_tomography.py`: Slices the Parity signal into multipole bins (l=2-30, 31-60, 61-100) to check for directional stability (The "Drift" Test).
+
+#### **Phase IV: Harmonic & Variance Audits (The "Axis of Evil")**
+* `run_harmonics.py`: Extracts the Principal Axes ("Pancakes") of the l=2 and l=3 modes.
+* `run_harmonics_null.py`: Tests if the Octopole (l=3) is statistically locked to the Ecliptic Pole.
+* `run_axis_validity.py`: **The "Axis of Evil" Test.** Checks if the internal l=2/3 alignment is anomalous vs. a masked random sky.
+* `run_variance_pipeline.py`: Tests the "Shielding Hypothesis" (Is the Ecliptic plane anomalously quiet?).
+* `run_jackknife.py`: Re-runs the variance test with a harsh Galactic Cut (|b| > 40 deg) to rule out foregrounds.
+
+#### **Utilities**
+* `inspect_columns.py`: Helper to view FITS headers for catalog debugging.
+
+---
+
+### `/src/ouroboros/engines` (Physics Logic)
+Core mathematical modules implementing the specific tests.
+
+* `parity.py`: Implements P(n) = C(n) + C(-n) symmetry calculations on Healpix maps.
+* `geo.py`: Geodesic distance calculators for void/node alignment.
+* `quasar.py`: 3D vector algebra for quasar distribution analysis (includes memory-mapped loading for DESI).
+* `harmonics.py`: Eigenvalue decomposition for extracting multipole orientation vectors.
+
+### `/src/ouroboros/validation` (Statistical Controls)
+Generators for the Null Hypothesis.
+
+* `nulling.py`: Generates random realizations of the CMB by shuffling a_lm phases while preserving the Power Spectrum (C_l).
+* `shuffling.py`: Generates random Quasar catalogs by rotating positions on the sphere.
+
+### `/src/ouroboros` (Core)
+* `ingestion.py`: Standardized loading for Planck `SMICA`/`NPIPE` maps (downgrading to NSIDE=64).
+* `config.py`: Central repository of Solar System vector constants (Solar Spin, Ecliptic Pole, Dipole).
+
+---
+
+## 4. Usage
+
+To reproduce the primary "Axis of Evil" masking artifact result:
+
+```bash
+# 1. Download Planck SMICA map to data/raw/planck/smica.fits
+# 2. Run the internal validity check
+python scripts/run_axis_validity.py data/raw/planck/smica.fits
 ```
 
-## Pipeline Architecture
+---
 
-The codebase is structured around three investigation tracks backed by a shared "Null-Test Engine":
+## 5. Acknowledgments
 
-### 1. The Parity Mirror (Plan A)
-* **Goal:** Test if the anomalous CMB Parity Asymmetry aligns with the **Solar Angular Momentum Vector** rather than the Ecliptic.
-* **Module:** `src/ouroboros/engines/parity.py`
-* **Methodology:** Directional scanning of the Point-Parity statistic ($P(n)$) for multipoles $l=2$ to $100$.
+Data provided by the Planck Collaboration (2018 Release) and DESI (Data Release 1). Analysis performed using `healpy` and `astropy`.
 
-### 2. The Cold Spot Shadow (Plan B)
-* **Goal:** Determine if the **Cold Spot (Eridanus Supervoid)** lies at a harmonic node relative to Solar geometry.
-* **Module:** `src/ouroboros/engines/geo.py`
-* **Methodology:** Geodesic distance calculation from the Cold Spot center to Ecliptic Poles and Equinox nodes.
+---
 
-### 3. High-Z Quasar Soft-Lock (Plan C)
-* **Goal:** Search for "Soft-Lock" alignments in the Reionization era ($z > 6$) that may have faded in lower-redshift structures.
-* **Module:** `src/ouroboros/engines/quasar.py`
-* **Methodology:** Correlating Quasar Polarization/Separation Vectors with the CMB Quadrupole axis.
+## 6. License
 
-## Validation Protocol: The Null-Test Engine
-To rule out False Positives (specifically Zodiacal light or window-function aliasing), all findings must pass the **Forensic Filter**:
-
-1.  **Kinematic Isolation:** Explicit removal of Monopole ($l=0$) and Dipole ($l=1$) modes.
-2.  **Foreground Veto:** Signals must persist in both Raw and Component-Separated (SMICA/SEVEM) maps.
-3.  **Geometric Nulling (Monte Carlo):**
-    * **Rotation:** Significance is determined by rotating the sky $N \ge 100$ times relative to the Solar System frame.
-    * **Shuffling:** For catalogs, positions are randomized while preserving mask density.
-
-## Setup & Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/ante-institute/ouroboros.git](https://github.com/ante-institute/ouroboros.git)
-    cd ouroboros
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    pip install .
-    # OR for development
-    pip install -e .[dev]
-    ```
-
-3.  **Data Ingestion:**
-    * Place Planck `.fits` files (NPIPE/SMICA) in `data/raw/`.
-    * Place SDSS/eBOSS catalogs in `data/raw/catalogs/`.
-
-## License
 MIT
