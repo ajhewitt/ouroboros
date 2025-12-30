@@ -1,0 +1,102 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+% Page Layout
+\geometry{margin=1in}
+
+% Title Metadata
+\title{\textbf{Project Plan: The Geometric Inevitability of the Axis of Evil}\\
+\large A Systematic Audit of Window Function Artifacts in CMB Anomalies}
+\author{Principal Investigator: A. Hewitt}
+\date{December 30, 2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The ``Axis of Evil'' (the anomalous alignment of CMB multipoles $l=2$ and $l=3$) remains one of the most cited challenges to the Copernican Principle. Preliminary results from \textit{Project Ouroboros} suggest this alignment may be a geometric artifact induced by the Galactic Mask. This project aims to definitively demonstrate that the observed alignment is a statistical inevitability of observing the universe through a window function (the Galactic Plane). We outline a four-phase ``Steel Man'' audit to robustly quantify this effect, aiming for a publishable falsification of the anomaly.
+\end{abstract}
+
+\section{Hypothesis}
+\textbf{The Mask-Induced Alignment Hypothesis:} The loss of equatorial data due to Galactic masking breaks rotational invariance, creating a preferred geometric axis (North-South). This forces low-multipole spherical harmonics to align their principal axes with the mask's symmetry axis, mimicking a cosmological signal.
+
+\section{Phase I: Data Robustness (The "Map Check")}
+\textit{Objective: Ensure the artifact is independent of the component-separation method.}
+
+\begin{enumerate}
+    \item \textbf{Map Consistency Check:}
+    \begin{itemize}
+        \item Replicate the $60\%$ alignment probability using alternate Planck 2018 maps: \texttt{NPIPE}, \texttt{SEVEM}, and \texttt{Commander}.
+        \item \textit{Success Criteria:} All maps must yield $P(\text{align}) > 0.05$ (Null Result) and show similar artifact rates in simulations.
+    \end{itemize}
+    
+    \item \textbf{The Mask Sensitivity Ladder (The "Smoking Gun"):}
+    \begin{itemize}
+        \item Run the Null Engine ($N=1000$) across a range of sky fractions ($f_{sky}$): $90\%$, $80\%$, $70\%$, $60\%$, $40\%$.
+        \item \textit{Prediction:} The probability of finding an "Axis of Evil" should scale inversely with $f_{sky}$.
+        \item \textit{Deliverable:} A plot of $P(\text{Alignment} < 10^\circ)$ vs. $f_{sky}$.
+    \end{itemize}
+\end{enumerate}
+
+\section{Phase II: Mathematical Formalism}
+\textit{Objective: Adopt the "Gold Standard" definitions to preempt theoretical objections.}
+
+\begin{enumerate}
+    \item \textbf{Maxwell Multipole Vectors (MMV):}
+    \begin{itemize}
+        \item Upgrade the \texttt{harmonics.py} engine to compute true Maxwell Multipole Vectors (headless unit vectors) rather than simple Eigenvalue Principal Axes.
+        \item This aligns our methodology with seminal papers (Copi et al., Huterer et al.).
+    \end{itemize}
+    
+    \item \textbf{Alignment Metrics:}
+    \begin{itemize}
+        \item Implement the standard "S-statistic" (Area of the triangle formed by multipole vectors) to quantify alignment rigor.
+    \end{itemize}
+\end{enumerate}
+
+\section{Phase III: Statistical Rigor}
+\textit{Objective: Quantify the "Look-Elsewhere" Effect.}
+
+\begin{enumerate}
+    \item \textbf{The Global Null:}
+    \begin{itemize}
+        \item Extend the alignment check to higher multipole pairs ($l=3$ vs $4$, $4$ vs $5$, ... $9$ vs $10$).
+        \item \textit{Hypothesis:} If the mask forces alignment, adjacent multipoles should show correlation well beyond just $l=2,3$.
+    \end{itemize}
+    
+    \item \textbf{Ensemble Verification:}
+    \begin{itemize}
+        \item Verify that the ensemble average of random masked skies converges to the "Evil" configuration.
+    \end{itemize}
+\end{enumerate}
+
+\section{Phase IV: High-Fidelity Simulation}
+\textit{Objective: Precision statistics for publication.}
+
+\begin{enumerate}
+    \item \textbf{Massive Simulation Run:}
+    \begin{itemize}
+        \item Execute $N=50,000$ simulations for the primary $l=2,3$ test.
+        \item \textit{Goal:} Reduce P-value error bars to $\pm 0.001$.
+    \end{itemize}
+    
+    \item \textbf{Final Report / Manuscript:}
+    \begin{itemize}
+        \item Compile results into a single figure: "The Probability of Evil."
+    \end{itemize}
+\end{enumerate}
+
+\section{Requirements}
+\begin{itemize}
+    \item \textbf{Compute:} 4-16 Cores (Local Workstation).
+    \item \textbf{Storage:} ~50 GB (Map Cache).
+    \item \textbf{Software:} Python 3.12, \texttt{healpy}, \texttt{numpy}, \texttt{astropy}.
+\end{itemize}
+
+\end{document}

@@ -21,13 +21,16 @@ The investigation systematically ruled out the hypothesis across all domains.
 | **A. Parity Mirror** | Solar Spin Axis | **0.890** | **Null** (Counter-Aligned) |
 | **B. Cold Spot** | Ecliptic Nodes | **0.614** | **Null** (Random Placement) |
 | **C. Quasar Structure** | Solar Spin Axis | **0.221** | **Null** (Random Orientation) |
-| **D. Ecliptic Shielding**| Variance | **0.747** | **Null** (Signal vanished after Galactic Cut) |
+| **D. Axis of Evil ($l=2,3$)** | Solar System | **0.459** | **Null** (No Solar Correlation) |
 
-### The "Axis of Evil" Finding (Phase IV)
-We investigated the anomalous alignment between the CMB Quadrupole (l=2) and Octopole (l=3), which are observed to be parallel within ~9 degrees.
-* **Solar Alignment:** We found no statistically significant link between this axis and the Solar System (p=0.459).
-* **Intrinsic Validity:** A null test (N=2000) revealed that **60.0%** of random universes produce an alignment tighter than 9 degrees when subjected to a standard Galactic Mask.
-* **Verdict:** The "Axis of Evil" is confirmed to be a **geometric artifact** of the mask, not a cosmological structure.
+### The "Death of the Axis" (Phase VI)
+We investigated the anomalous alignment between the CMB Quadrupole ($l=2$) and Octopole ($l=3$), which are observed to be parallel within ~9 degrees.
+
+* **Mask Robustness:** The alignment is **not** a mask artifact. It persists ($p \approx 0.016$) across all Galactic cut thresholds ($f_{sky} 36\% - 100\%$).
+* **Directional Coherence:** We compared the $l=2,3$ axis to the secondary alignment found at $l=5,6$.
+    * **Result:** The two anomalies are separated by **55.6°**.
+    * **Significance:** This falls in the center of the random isotropic distribution ($p=0.43$).
+* **Verdict:** The "Axis of Evil" is a **statistical fluctuation** consistent with the Look-Elsewhere Effect in a Gaussian Random Field. It lacks the global coherence required by physical anisotropy models (e.g., Toroidal Topology).
 
 ---
 
@@ -52,6 +55,11 @@ These scripts run specific scientific audits.
 * `run_axis_validity.py`: **The "Axis of Evil" Test.** Checks if the internal l=2/3 alignment is anomalous vs. a masked random sky.
 * `run_variance_pipeline.py`: Tests the "Shielding Hypothesis" (Is the Ecliptic plane anomalously quiet?).
 * `run_jackknife.py`: Re-runs the variance test with a harsh Galactic Cut (|b| > 40 deg) to rule out foregrounds.
+
+#### **Phase V - VI: The Axis of Evil (Harmonic Audits)**
+* `run_harmonics.py`: Extracts Principal Axes (Eigenvectors) for multipoles.
+* `run_axis_validity.py`: Tests alignment significance against random skies.
+* `run_separation_forensics.py`: **Phase VI (The Killer).** Calculates the orthogonality of the $l=2,3$ and $l=5,6$ axes.
 
 #### **Utilities**
 * `inspect_columns.py`: Helper to view FITS headers for catalog debugging.
@@ -80,13 +88,12 @@ Generators for the Null Hypothesis.
 
 ## 4. Usage
 
-To reproduce the primary "Axis of Evil" masking artifact result:
+To reproduce the final "Incoherence" result:
 
 ```bash
 # 1. Download Planck SMICA map to data/raw/planck/smica.fits
-# 2. Run the internal validity check
-python scripts/run_axis_validity.py data/raw/planck/smica.fits
-```
+# 2. Run the separation forensics script
+python scripts/run_separation_forensics.py
 
 ---
 
